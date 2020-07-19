@@ -86,7 +86,6 @@ def main():
     global ERROR
     from PyQt5 import QtWidgets, QtGui, QtCore
     from enui.EnUI import MainUI
-    
     app=QtWidgets.QApplication(sys.argv)
     main_window=QtWidgets.QMainWindow()
     ui=MainUI()
@@ -132,7 +131,7 @@ def main():
             add(cmd)
         if ui.checkBox_4.isChecked():
             cmd=".xsession-errors"
-            outputs.append(HEADER)
+            outputs.append(HEADER(cmd))
             try:
                 with open(os.environ["HOME"]+"/.xsession-errors", 'r') as f:
                     outputs.append(f.read())
@@ -140,8 +139,8 @@ def main():
                 ERROR(".xsession.error file not  found")
             outputs.append(FOOTER)
         if ui.checkBox_5.isChecked():
-            cmd="/var/lov/Xorg.0.log"
-            outputs.append(HEADER)
+            cmd="/var/log/Xorg.0.log"
+            outputs.append(HEADER(cmd))
             try:
                 with open("/var/log/Xorg.0.log", 'r') as f:
                     outputs.append(f.read())

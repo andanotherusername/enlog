@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import sys
 
 class MainUI(object):
     def initUI(self, MainWindow):
@@ -9,9 +9,9 @@ class MainUI(object):
         MainWindow.resize(382, 507)
         MainWindow.setMinimumSize(QtCore.QSize(382, 507))
         MainWindow.setMaximumSize(QtCore.QSize(382, 507))
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("ui/../icons/EndeavourOS-logo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        MainWindow.setWindowIcon(icon)
+        self.icon = QtGui.QIcon()
+        self.icon.addPixmap(QtGui.QPixmap("/usr/share/endeavouros/EndeavourOS-icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(self.icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -118,13 +118,3 @@ class MainUI(object):
         self.radioButton.setText(_translate("MainWindow", "Remove personal info"))
         self.pushButton.setText(_translate("MainWindow", "Generate link"))
         self.pushButton_2.setText(_translate("MainWindow", "Save locally"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())

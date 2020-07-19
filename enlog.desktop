@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
 Encoding=UTF-8
-Name=EndeavourOS log tool
-Comment=Log tool to send selected system logs to the internet
-Exec=/usr/bin/eos-log-tool
+Name=EndeavourOS log tool (Python)
+Comment=Log tool to save and generate a sharable link
+Exec=/usr/bin/enlog
 Icon=/usr/share/endeavouros/EndeavourOS-icon.png
 # StartupNotify=false
 # Terminal=False
